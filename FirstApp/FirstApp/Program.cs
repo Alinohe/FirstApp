@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-
+﻿
 int number = 4566;
 string numberInString = number.ToString();
 char[] letters = numberInString.ToArray();
