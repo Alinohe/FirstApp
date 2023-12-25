@@ -3,25 +3,28 @@ namespace FirstProject1
 {
     internal class User
     {
-        private List<int> score = new List<int>();
+        public List<int> score = new List<int>();
 
-        public User(string login, string password)
+        public User(string Name, string Surname, int age)
         {
-            this.Login = login;
-            this.Password = password;
+            this.Name = Name;
+            this.Surname = Surname;
+            this.age = age;
         }
-        public string Login { get; private set; }
-        public string Password { get; private set; }
-
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+        public int age { get; private set; }        
         public int Result
         {
             get
             {
                 return this.score.Sum();
+               
             }
         }
         public void AddScore(int number)
-        {
+
+            {
             this.score.Add(number);
         }
     }
