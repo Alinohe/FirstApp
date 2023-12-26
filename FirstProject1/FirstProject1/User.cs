@@ -1,19 +1,19 @@
 ﻿
 namespace FirstProject1
 {
-    internal class User
+    public class user
     {
         public List<int> score = new List<int>();
 
-        public User(string Name, string Surname, int age)
+        public user(string Name, string Password)
         {
-            this.Name = Name;
-            this.Surname = Surname;
-            this.age = age;
+           this.Name = Name;
+           this.Password = Password;
+          
         }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-        public int age { get; private set; }        
+        public string Name { get; set; }
+        public string Password { get; set; }
+        
         public int Result
         {
             get
