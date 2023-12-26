@@ -1,4 +1,4 @@
-﻿//Zadanie 6
+﻿//Zadanie 7
 
 using FirstProject1;
 
