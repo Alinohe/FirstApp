@@ -3,7 +3,7 @@ using FirstProject1;
 
 namespace FirstProject1.Test
 {
-    public class Tests
+    public class TypeTests
     {
         [Test]
         public void CheckSumOperaton()

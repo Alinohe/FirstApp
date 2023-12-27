@@ -1,18 +1,27 @@
 ﻿
+using System.Runtime.CompilerServices;
+
 namespace FirstProject1
 {
     public class user
     {
-        public List<int> score = new List<int>();
+        private List<int> score = new List<int>();
 
-        public user(string Name, string Password)
+        public user(string Login)
         {
-           this.Name = Name;
+            this.Login = Login;
+        }
+
+        public user(string Login, string Password)
+        {
+           this.Login = Login;
            this.Password = Password;
           
         }
-        public string Name { get; set; }
-        public string Password { get; set; }
+        public string Login { get; private set; }
+
+   
+        public string Password { get; private set; }
         
         public int Result
         {
