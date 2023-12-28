@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/FirstProject1/FirstApp1.Test/UserTest.cs
+/FirstProject1/FirstProject1/User.cs
