@@ -10,8 +10,8 @@ namespace FirstApp1.Test
 
         {
             //arrange
-            string number1 = "Robert";
-            string number2 = "Robert";
+            string number1 = "50";
+            string number2 = "50";
 
             //act
 
