@@ -1,8 +1,5 @@
-﻿using FirstProject1;
-
-namespace FirstApp1.Test
+﻿namespace FirstApp1.Test
 {
-
     public class TypeTest
     {
         [Test]
@@ -10,8 +7,8 @@ namespace FirstApp1.Test
 
         {
             //arrange
-            string number1 = "50";
-            string number2 = "50";
+            string number1 = "Robert";
+            string number2 = "Robert";
 
             //act
 
@@ -22,7 +19,7 @@ namespace FirstApp1.Test
 
         }
 
-           
+
         [Test]
         public void Testfloat()
 
@@ -39,9 +36,9 @@ namespace FirstApp1.Test
             Assert.AreNotEqual(number1, number2);
 
         }
-            
-            [Test]
-        public void TestWartosciowy()
+
+        [Test]
+        public void ValueTest()
 
         {
             //arrange
@@ -57,28 +54,6 @@ namespace FirstApp1.Test
 
         }
 
-        [Test]
-
-        public void TestReferencyjny()
-        {
-            //arrange
-            var user1 = GetUser("Adam", "321asd3213");
-            var user2 = GetUser("Robert", "321asd3213");
-
-            //act
-
-
-
-            //Assert
-
-
-            Assert.AreNotEqual(user1, user2);
-        }
-
-        private user GetUser(string name, string Login)
-        {
-            return new user(name, Login);
-        }
+    
     }
 }
-
