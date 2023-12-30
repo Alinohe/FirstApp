@@ -6,7 +6,7 @@ namespace FirstApp1.Test
     {
         [Test]
 
-        public void WhenGetStatShouldReturnMax()
+        public void GetStatisticsForeach()
         {
 
             //arrange
@@ -16,17 +16,17 @@ namespace FirstApp1.Test
             employee.AddGrade(6);
 
             //act
-            var statistics = employee.GetStatisticts();
+            var statistics1 = employee.GetStatistictsForeach();
 
             //assert
 
-            Assert.AreEqual(6, statistics.Max);
+            Assert.AreEqual(6, statistics1.Max);
 
         }
 
         [Test]
 
-        public void WhenGetStatShouldReturnMin()
+        public void GetStatisticsFor()
         {
 
             //arrange
@@ -36,17 +36,17 @@ namespace FirstApp1.Test
             employee.AddGrade(6);
 
             //act
-            var statistics = employee.GetStatisticts();
+            var statistics2 = employee.GetStatistictsFor();
 
             //assert
 
-            Assert.AreEqual(2, statistics.Min);
+            Assert.AreEqual(2, statistics2.Min);
 
         }
 
         [Test]
 
-        public void ThenGetStatShouldReturnAverage()
+        public void GetStatistiscDoWhile()
         {
 
             //arrange
@@ -56,15 +56,32 @@ namespace FirstApp1.Test
             employee.AddGrade(6);
 
             //act
-            var statistics = employee.GetStatisticts();
+            var statistics3 = employee.GetStatistictsDoWhile();
 
             //assert
 
-            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics3.Average, 2));
 
 
         }
 
+        [Test]
 
+        public void GetStatistiscWhile()
+        {
+
+            //arrange
+            var employee = new Employee("Robert", "Domanski");
+            employee.AddGrade(2);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
+
+            //act
+            var statistics4 = employee.GetStatistictsWhile();
+
+            //assert
+
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics4.Average, 2));
+        }
     }
 }
