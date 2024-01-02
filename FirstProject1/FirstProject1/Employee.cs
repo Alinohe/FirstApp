@@ -3,19 +3,16 @@ using System.Runtime.CompilerServices;
 
 namespace FirstProject1
 {
-    public class Employee
+    public class Employee : Person
+
     {
-        private List<float> grades = new List<float>();
+           private List<float> grades = new List<float>();
 
         public Employee(string name, string surname)
+            : base(name, surname)
         {
-            this.Name = name;
-            this.Surname = surname;
+            
         }
-
-        public string Name { get; set; }
-        public string Surname { get; set; }
-
         public void AddGrade(float grade)
         {
 
@@ -28,59 +25,27 @@ namespace FirstProject1
                      throw new Exception("Invailid grade Value. Add between 0 and 100");
                  }
         }
-
-        public void AddGrade(double grade)
-
-        {
-            if (float.TryParse(grade.ToString(), out float result))
-            {
-                this.AddGrade(result);
-            }
-                else
-                {
-                    throw new Exception($"wrong value - :  {grade}");
-                }
-        }
-
         public void AddGrade(char grade)
         {
             switch (grade)
             {
                 case 'A' or 'a':
-
-                    this.grades.Add(100);
+                    AddGrade(100);
                     break;
                 case 'B' or 'b':
-
-                    this.grades.Add(80);
+                    AddGrade(80);
                     break;
                 case 'C' or 'c':
-
-                    this.grades.Add(60);
+                    AddGrade(60);
                     break;
                 case 'D' or 'd':
-
-                    this.grades.Add(40);
+                    AddGrade(40);
                     break;
                 case 'E' or 'e':
-
-                    this.grades.Add(20);
+                    AddGrade(20);
                     break;
                 default:
                     throw new Exception("Wrong Letter Write Letter between A and E or a and e");
-            }
-        }
-
-        public void AddGrade(long grade)
-        {
-            var number = (float)grade;
-            if (number >= 0 && number <= 100)
-            {
-                this.grades.Add(number);
-            }
-            else
-            {
-                throw new Exception("Nmber must be between 0 and 100");
             }
         }
 
