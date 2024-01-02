@@ -11,6 +11,7 @@ namespace FirstApp1.Test
 
             //arrange
             var employee = new Employee("Robert", "Domanski");
+            //var employee = new Employee();  
             employee.AddGrade(2);
             employee.AddGrade(2);
             employee.AddGrade(6);
@@ -20,7 +21,7 @@ namespace FirstApp1.Test
 
             //assert
 
-            Assert.AreEqual(6, statistics.Max);
+            Assert.That(statistics.Max, Is.EqualTo(6));
 
         }
 

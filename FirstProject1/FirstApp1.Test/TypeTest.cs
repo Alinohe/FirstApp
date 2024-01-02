@@ -15,7 +15,7 @@
 
             //Assert
 
-            Assert.AreEqual(number1, number2);
+            Assert.That(number2, Is.EqualTo(number1));
 
         }
 
@@ -33,7 +33,7 @@
 
             //Assert
 
-            Assert.AreNotEqual(number1, number2);
+            Assert.That(number2, Is.Not.EqualTo(number1));
 
         }
 
@@ -50,10 +50,10 @@
 
             //Assert
 
-            Assert.AreNotEqual(number1, number2);
+            Assert.That(number2, Is.Not.EqualTo(number1));
 
         }
 
-
+    
     }
 }

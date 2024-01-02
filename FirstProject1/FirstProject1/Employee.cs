@@ -1,6 +1,4 @@
-﻿
-
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace FirstProject1
@@ -21,7 +19,7 @@ namespace FirstProject1
         public void AddGrade(float grade)
         {
 
-            int valueInInt = (int)grade;
+            
 
             if (grade >= 0 && grade <= 100)
             {
@@ -29,7 +27,7 @@ namespace FirstProject1
             }
             else
             {
-                Console.WriteLine("Invailid grade Value. Add between 0 and 100");
+                throw new Exception("Invailid grade Value. Add between 0 and 100");
             }
 
         }
@@ -42,7 +40,7 @@ namespace FirstProject1
             }
             else
             {
-                Console.WriteLine($"wrong value - :  {grade}");
+                throw new Exception($"wrong value - :  {grade}");
             }
         }
         public void AddGrade(char grade)
@@ -50,30 +48,46 @@ namespace FirstProject1
 
             switch (grade)
             {
-                case 'A':
+                case 'A'or'a':
 
                     this.grades.Add(100);
                     break;
-                case 'B':
+                case 'B' or'b':
 
                     this.grades.Add(80);
                     break;
-                case 'C':
+                case 'C' or'c':
 
                     this.grades.Add(60);
                     break;
-                case 'D':
+                case 'D' or 'd':
 
                     this.grades.Add(40);
                     break;
-                case 'E':
+                case 'E' or 'e':
 
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter Write Letter between A and E");
-                    break;
+                    throw new Exception("Wrong Letter Write Letter between A and E or a and e");
+                    
 
+            }
+
+        }
+        public void AddGrade(long grade)
+        {
+            var number = (float)grade;
+
+            if (number >= 0 && number <= 100)
+                this.grades.Add(number);
+            else if (number < 0)
+            {
+                throw new Exception("NUmber must be bigger than 0");
+            }
+            else
+            {
+                throw new Exception("Number must be lower or equal to 100");
             }
 
         }
@@ -92,7 +106,7 @@ namespace FirstProject1
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Grade");
+                    throw new Exception("Invalid Grade");
 
                 }
             }
