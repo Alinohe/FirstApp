@@ -19,18 +19,16 @@ namespace FirstProject1
         public void AddGrade(float grade)
         {
 
-            
-
             if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
             }
-            else
-            {
-                throw new Exception("Invailid grade Value. Add between 0 and 100");
-            }
-
+                else
+                {
+                     throw new Exception("Invailid grade Value. Add between 0 and 100");
+                 }
         }
+
         public void AddGrade(double grade)
 
         {
@@ -38,25 +36,25 @@ namespace FirstProject1
             {
                 this.AddGrade(result);
             }
-            else
-            {
-                throw new Exception($"wrong value - :  {grade}");
-            }
+                else
+                {
+                    throw new Exception($"wrong value - :  {grade}");
+                }
         }
+
         public void AddGrade(char grade)
         {
-
             switch (grade)
             {
-                case 'A'or'a':
+                case 'A' or 'a':
 
                     this.grades.Add(100);
                     break;
-                case 'B' or'b':
+                case 'B' or 'b':
 
                     this.grades.Add(80);
                     break;
-                case 'C' or'c':
+                case 'C' or 'c':
 
                     this.grades.Add(60);
                     break;
@@ -70,33 +68,27 @@ namespace FirstProject1
                     break;
                 default:
                     throw new Exception("Wrong Letter Write Letter between A and E or a and e");
-                    
-
             }
-
         }
+
         public void AddGrade(long grade)
         {
             var number = (float)grade;
-
             if (number >= 0 && number <= 100)
-                this.grades.Add(number);
-            else if (number < 0)
             {
-                throw new Exception("NUmber must be bigger than 0");
+                this.grades.Add(number);
             }
             else
             {
-                throw new Exception("Number must be lower or equal to 100");
+                throw new Exception("Nmber must be between 0 and 100");
             }
-
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
-
             }
             else
             {
@@ -107,10 +99,10 @@ namespace FirstProject1
                 else
                 {
                     throw new Exception("Invalid Grade");
-
                 }
             }
         }
+
         public Statistics GetStatisticts()
         {
             var statistics = new Statistics();
@@ -126,7 +118,6 @@ namespace FirstProject1
                     statistics.Min = Math.Min(statistics.Min, grade);
                     statistics.Average += grade;
                 }
-
             }
             statistics.Average /= this.grades.Count;
 
@@ -149,8 +140,6 @@ namespace FirstProject1
                     break;
             }
             return statistics;
-
         }
-
     }
 }

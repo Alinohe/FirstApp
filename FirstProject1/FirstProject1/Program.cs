@@ -4,10 +4,12 @@ using FirstProject1;
 Console.WriteLine("Witamy w Programie XYZ do oceny Pracownikow");
 Console.WriteLine("================================================");
 Console.WriteLine();
-
 Console.WriteLine("Podaj Imie Pracownika");
+
 var name = Console.ReadLine();
+
 Console.WriteLine("Podaj Nazwisko Pracownika");
+
 var surname = Console.ReadLine();
 var employee = new Employee(name, surname);
 
@@ -33,9 +35,6 @@ while (true)
         Console.WriteLine($"Exception Found: {ex.Message}");
         Console.WriteLine();
     }
-    
-    //employee.AddGrade(input);
-
 }
 
 var statistics = employee.GetStatisticts();
