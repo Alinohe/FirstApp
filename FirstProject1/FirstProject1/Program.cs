@@ -1,5 +1,6 @@
 ﻿
 using FirstProject1;
+using System.ComponentModel.Design;
 
 Console.WriteLine("Witamy w Programie XYZ do oceny Pracownikow");
 Console.WriteLine("================================================");
@@ -11,9 +12,14 @@ var name = Console.ReadLine();
 Console.WriteLine("Podaj Nazwisko Pracownika");
 
 var surname = Console.ReadLine();
-var employee = new Employee(name, surname);
 
-Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
+Console.WriteLine("Podaj plec Pracownika 'M' , 'K' lub '-'");
+
+var gender = Console.ReadLine();
+
+var employee = new Employee(name, surname, gender);
+
+Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname} {employee.Gender}:");
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine("Podaj ocene pracownika");
@@ -38,7 +44,7 @@ while (true)
 }
 
 var statistics = employee.GetStatisticts();
-Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
+Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname} {employee.Gender}:");
 Console.WriteLine($"Average: {statistics.Average:N2} Letter  {statistics.AverageLetter}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");

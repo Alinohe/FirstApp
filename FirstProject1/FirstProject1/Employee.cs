@@ -8,11 +8,12 @@ namespace FirstProject1
     {
            private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
-            : base(name, surname)
+        public Employee(string name, string surname, string gender)
+            : base(name, surname, gender)
         {
             
         }
+       
         public void AddGrade(float grade)
         {
 
