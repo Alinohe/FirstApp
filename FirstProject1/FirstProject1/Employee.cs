@@ -1,19 +1,20 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
-namespace FirstProject1
+﻿namespace FirstProject1
 {
-    public class Employee : Person
+    public class Employee : IEmployee
 
     {
-           private List<float> grades = new List<float>();
+        private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname, string gender)
-            : base(name, surname, gender)
+        public Employee(string name, string surname)
+
         {
-            
+            this.Name = name;
+            this.Surname = surname;
         }
-       
+
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+
         public void AddGrade(float grade)
         {
 
@@ -21,10 +22,10 @@ namespace FirstProject1
             {
                 this.grades.Add(grade);
             }
-                else
-                {
-                     throw new Exception("Invailid grade Value. Add between 0 and 100");
-                 }
+            else
+            {
+                throw new Exception("Invailid grade Value. Add between 0 and 100");
+            }
         }
         public void AddGrade(char grade)
         {
@@ -69,8 +70,19 @@ namespace FirstProject1
             }
         }
 
-        public Statistics GetStatisticts()
+        public void AddGrade(double grade)
         {
+            throw new NotImplementedException();
+        }
+
+        public void AddGrade(int grade)
+        {
+            throw new NotImplementedException();
+        }
+
+         public Statistics GetStatistics()
+        
+       {
             var statistics = new Statistics();
             statistics.Average = 0;
             statistics.Max = float.MinValue;
