@@ -23,13 +23,13 @@ while (true)
 {
     Console.WriteLine("Podaj kolejna ocene pracownika lub wyjdz naciskajac q");
     var input = Console.ReadLine();
+
     if (input == "q")
     {
         break;
     }
-    else if ((input == "A") || (input == "a") || (input == "B") || (input == "b") || (input == "C") || (input == "c") || (input == "D") || (input == "d") || (input == "E") || (input == "e"))
+    else
     {
-        char temp = char.Parse(input);
         try
         {
             employee.AddGrade(input);
@@ -37,10 +37,11 @@ while (true)
         catch (Exception ex)
         {
             Console.WriteLine($"Exception Found: {ex.Message}");
-            Console.WriteLine();
         }
     }
 }
+
+
 var statistics = employee.GetStatistics();
 Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
 Console.WriteLine($"Average: {statistics.Average:N2} Letter  {statistics.AverageLetter}");

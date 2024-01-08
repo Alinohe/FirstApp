@@ -32,22 +32,22 @@
             switch (grade)
             {
                 case 'A' or 'a':
-                    AddGrade(100);
+                    AddGrade(100.0f);
                     break;
                 case 'B' or 'b':
-                    AddGrade(80);
+                    AddGrade(80.0f);
                     break;
                 case 'C' or 'c':
-                    AddGrade(60);
+                    AddGrade(60.0f);
                     break;
                 case 'D' or 'd':
-                    AddGrade(40);
+                    AddGrade(40.0f);
                     break;
                 case 'E' or 'e':
-                    AddGrade(20);
+                    AddGrade(20.0f);
                     break;
                 default:
-                    throw new Exception("Wrong Letter Write Letter between A and E or a and e");
+                    throw new Exception("Wrong Letter. Write Letter between A and E or a and e");
             }
         }
 
