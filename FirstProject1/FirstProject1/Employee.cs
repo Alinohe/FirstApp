@@ -44,7 +44,7 @@
                     AddGrade(40.0f);
                     break;
                 case 'E' or 'e':
-                    AddGrade(20.0f);
+                    AddGrade(20);
                     break;
                 default:
                     throw new Exception("Wrong Letter. Write Letter between A and E or a and e");
@@ -72,12 +72,12 @@
 
         public void AddGrade(double grade)
         {
-            throw new NotImplementedException();
+         this.AddGrade((float)grade);
         }
 
         public void AddGrade(int grade)
         {
-            throw new NotImplementedException();
+            this.AddGrade((float)grade);
         }
 
          public Statistics GetStatistics()
