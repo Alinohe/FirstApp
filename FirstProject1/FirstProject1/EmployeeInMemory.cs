@@ -5,9 +5,19 @@
         private List<float> grades = new List<float>();
         private string fileName = "grades.txt";
 
-        public EmployeeInMemory(string name, string surname) : base(name, surname) 
+        public EmployeeInMemory(string name, string surname) : base(name, surname)
         {
-        
+
+        }
+
+        public override void AddGrade(double grade)
+        {
+            this.AddGrade((int)grade);
+        }
+
+        public override void AddGrade(float grade)
+        {
+            this.AddGrade((int)grade);
         }
 
         public override void AddGrade(int grade)
@@ -26,6 +36,25 @@
                 }
             }
         }
+        public override void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                if (grade.Length == 1)
+                {
+                    AddGrade(grade[0]);
+                }
+                else
+                {
+                    throw new Exception("Invalid Grade");
+                }
+            }
+        }
+
         public override void AddGrade(char grade)
         {
             switch (grade)
@@ -43,40 +72,11 @@
                     AddGrade(40.0f);
                     break;
                 case 'E' or 'e':
-                    AddGrade(20);
+                    AddGrade(20.0f);
                     break;
                 default:
                     throw new Exception("Wrong Letter. Write Letter between A and E or a and e");
             }
-        }
-
-        public override void AddGrade(string grade)
-        {
-            if (int.TryParse(grade, out int result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                if (grade.Length == 1)
-                {
-                    AddGrade(grade[0]);
-                }
-                else
-                {
-                    throw new Exception("Invalid Grade");
-                }
-            }
-        }
-
-        public override void AddGrade(double grade)
-        {
-            this.AddGrade((int)grade);
-        }
-
-        public override void AddGrade(float grade)
-        {
-            this.AddGrade((int)grade);
         }
 
         public override Statistics GetStatistics()

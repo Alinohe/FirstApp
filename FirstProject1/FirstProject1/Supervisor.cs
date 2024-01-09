@@ -97,15 +97,15 @@
                         break;
                     default:
                         throw new Exception("Invailid grade Value. Choose between 0 and 7 include + nad - for example +5 or 4-");
-
-
                 }
         }
+
         public void AddGrade(double grade)
         {
             var valueInInt = (int)grade;
             this.AddGrade(valueInInt);
         }
+
         public void AddGrade(long grade)
         {
             var valueInInt = (int)grade;
@@ -117,6 +117,7 @@
             var valueInInt = (int)(grade);
             this.AddGrade(valueInInt);
         }
+
         public void AddGrade(char grade)
         {
             switch (grade)

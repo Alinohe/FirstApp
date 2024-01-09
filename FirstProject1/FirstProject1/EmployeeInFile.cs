@@ -7,17 +7,16 @@
         {
         }
 
-        public override void AddGrade(float grade)
-        {
-            using (var writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(grade);
-            }
-        }
-
         public override void AddGrade(double grade)
         {
-            throw new NotImplementedException();
+            var valueInInt = (int)grade;
+            this.AddGrade(valueInInt);
+        }
+
+        public override void AddGrade(float grade)
+        {
+            var valueInInt = (int)grade;
+            this.AddGrade(valueInInt);
         }
 
         public override void AddGrade(int grade)
@@ -45,7 +44,14 @@
             }
             else
             {
-                throw new Exception("String is not float");
+                if (grade.Length == 1)
+                {
+                    AddGrade(grade[0]);
+                }
+                else
+                {
+                    throw new Exception("Invalid Grade");
+                }
             }
         }
 
@@ -66,7 +72,7 @@
                     AddGrade(40.0f);
                     break;
                 case 'E' or 'e':
-                    AddGrade(20);
+                    AddGrade(20.0f);
                     break;
                 default:
                     throw new Exception("Wrong Letter. Write Letter between A and E or a and e");
@@ -96,6 +102,7 @@
                     }
                 }
             }
+
             result.Average = result.Average / num;
             switch (result.Average)
             {
@@ -117,6 +124,6 @@
             }
             return result;
         }
-        
+
     }
 }

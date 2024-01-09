@@ -18,7 +18,7 @@ Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
 Console.WriteLine();
 Console.WriteLine();
 Console.WriteLine("Podaj ocene pracownika");
-//employee.AddGrade(0.5f);
+
 while (true)
 {
     Console.WriteLine("Podaj kolejna ocene pracownika lub wyjdz naciskajac q");
