@@ -14,8 +14,7 @@ var surname = Console.ReadLine();
 
 var employee = new EmployeeInMemory(name, surname);
 var employeeInMemory = new EmployeeInMemory("In", "Memory");
-employeeInMemory.GradeAdded += EmloyeeGradeAdded;
-employeeInMemory.GradeAdded += employeeInMemory.GetStatistics;
+employeeInMemory.GradeAdded += EmployeeGradeAdded;
 employeeInMemory.AddGrade(60);
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
@@ -23,10 +22,6 @@ void EmployeeGradeAdded(object sender, EventArgs args)
 }
 
 employee.GradeAdded += EmployeeGradeAdded;
-
-
-
-//employee.AddGrade(10.0f);
 
 Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
 Console.WriteLine();

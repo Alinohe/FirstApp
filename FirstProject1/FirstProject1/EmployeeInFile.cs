@@ -2,6 +2,8 @@
 {
     public class EmployeeInFile : EmployeeBase
     {
+        public override event GradeAddedDelegate GradeAdded;
+        private List<float> grades = new List<float>();
         private string fileName = "grades.txt";
         public EmployeeInFile(string name, string surname) : base(name, surname)
         {
@@ -24,9 +26,10 @@
             {
                 if (grade >= 0 && grade <= 100)
                 {
-                    using (var writer = File.AppendText(fileName))
+                    this.grades.Add(grade);
+                    if (GradeAdded != null)
                     {
-                        writer.WriteLine(grade);
+                        GradeAdded(this, new EventArgs());
                     }
                 }
                 else

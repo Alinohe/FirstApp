@@ -2,8 +2,7 @@
 {
     public class EmployeeInMemory : EmployeeBase
     {
-      
-        public abstract event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
         private List<float> grades = new List<float>();
         private string fileName = "grades.txt";
 
