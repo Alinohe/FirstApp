@@ -12,7 +12,21 @@ Console.WriteLine("Podaj Nazwisko Pracownika");
 
 var surname = Console.ReadLine();
 
-var employee = new EmployeeInFile(name, surname);
+var employee = new EmployeeInMemory(name, surname);
+var employeeInMemory = new EmployeeInMemory("In", "Memory");
+employeeInMemory.GradeAdded += EmloyeeGradeAdded;
+employeeInMemory.GradeAdded += employeeInMemory.GetStatistics;
+employeeInMemory.AddGrade(60);
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano Nowa Ocene");
+}
+
+employee.GradeAdded += EmployeeGradeAdded;
+
+
+
+//employee.AddGrade(10.0f);
 
 Console.WriteLine($"ocena dla pracownika {employee.Name} {employee.Surname}:");
 Console.WriteLine();
