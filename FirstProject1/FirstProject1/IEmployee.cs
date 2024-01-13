@@ -9,6 +9,8 @@
         void AddGrade(int grade);
         void AddGrade(string grade);
         void AddGrade(char grade);
+
+        //event GradeAddedDelegate GradeAdded;
         Statistics GetStatistics(); 
     }
 }
