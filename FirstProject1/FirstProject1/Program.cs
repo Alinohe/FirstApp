@@ -13,7 +13,7 @@ Console.WriteLine("Podaj Nazwisko Pracownika");
 var surname = Console.ReadLine();
 
 var employee = new EmployeeInMemory(name, surname);
-var employeeInMemory = new EmployeeInMemory("In", "Memory");
+var employeeInMemory = new EmployeeInFile("In", "Memory");
 employeeInMemory.GradeAdded += EmployeeGradeAdded;
 employeeInMemory.AddGrade(60);
 void EmployeeGradeAdded(object sender, EventArgs args)
