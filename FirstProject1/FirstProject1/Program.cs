@@ -12,10 +12,10 @@ Console.WriteLine("Podaj Nazwisko Pracownika");
 
 var surname = Console.ReadLine();
 
-var employee = new EmployeeInMemory(name, surname);
-var employeeInMemory = new EmployeeInMemory("In", "Memory");
+var employee = new EmployeeInFile(name, surname);
+var employeeInMemory = new EmployeeInFile("In", "Memory");
 employeeInMemory.GradeAdded += EmployeeGradeAdded;
-employeeInMemory.AddGrade(60);
+//employeeInMemory.AddGrade(60);
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
     Console.WriteLine("Dodano Nowa Ocene");

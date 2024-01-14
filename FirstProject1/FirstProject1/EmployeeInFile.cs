@@ -34,50 +34,51 @@
         }
         public override void AddGrade(double grade)
         {
-            var valueInInt = (int)grade;
-            this.AddGrade(valueInInt);
-        }
-
-        public override void AddGrade(float grade)
-        {
-            var valueInInt = (int)grade;
-            this.AddGrade(valueInInt);
+            var valueInFloat = (float)grade;
+            this.AddGrade(valueInFloat);
         }
 
         public override void AddGrade(int grade)
         {
+            var valueInFloat = (float)grade;
+            this.AddGrade(valueInFloat);
+        }
+
+        public override void AddGrade(float grade)
+        {
+            if (grade >= 0 && grade <= 100)
             {
-                if (grade >= 0 && grade <= 100)
+                using (var writer = File.AppendText(fileName))
                 {
-                    this.grades.Add(grade);
-                    if (GradeAdded != null)
-                    {
-                        GradeAdded(this, new EventArgs());
-                    }
+                    writer.WriteLine(grade);
                 }
-                else
+
+                if (GradeAdded != null)
                 {
-                    throw new Exception("Invailid grade Value. Add between 0 and 100");
+                    GradeAdded(this, new EventArgs());
                 }
+            }
+            else
+            {
+                throw new Exception("Wrong value Write value between 0 and 100");
             }
         }
 
         public override void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
+
+            char[] charArray = grade.ToCharArray();
+            if ((charArray.Length == 1) && (char.ToLower(charArray[0]) >= 'a') && (char.ToLower(charArray[0]) <= 'e'))
+            {
+                this.AddGrade(charArray[0]);
+            }
+            else if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
             }
             else
             {
-                if (grade.Length == 1)
-                {
-                    AddGrade(grade[0]);
-                }
-                else
-                {
-                    throw new Exception("Invalid Grade");
-                }
+                throw new Exception("Wrong Letter. Write letter between A and E lower cases possible");
             }
         }
 
