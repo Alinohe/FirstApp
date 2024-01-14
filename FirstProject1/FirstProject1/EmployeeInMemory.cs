@@ -58,7 +58,6 @@
             }
         }
 
-
         public override void AddGrade(char grade)
         {
             switch (grade)

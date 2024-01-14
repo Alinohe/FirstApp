@@ -46,8 +46,7 @@ namespace FirstProject1
             this.Count++;
             this.Sum += grade;
             this.Min = Math.Min(grade, this.Min);
-            this.Max += Math.Max(grade, this.Max);
+            this.Max = Math.Max(grade, this.Max);
         }
-
     }
 }
