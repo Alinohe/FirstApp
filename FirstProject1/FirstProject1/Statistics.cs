@@ -13,7 +13,6 @@ namespace FirstProject1
             {
                 return this.Sum / this.Count;
             }
-        
         }
         public char AverageLetter
         {

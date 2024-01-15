@@ -26,10 +26,6 @@
         public abstract Statistics GetStatistics();
 
     }
-
-
-
-
 }
 
 
